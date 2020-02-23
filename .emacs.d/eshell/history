@@ -1,0 +1,6 @@
+ssh alkona-dev
+docker build .
+cd Docker/
+docker build .
+clear
+clear
