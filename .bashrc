@@ -136,21 +136,7 @@ __kube_context ()
 {
     kubectl config current-context
 }
-#export PS1="[\[\e[32m\]\A\[\e[0m\]] \[\e[32m\]\u\[\e[0m\]@\[\e[32m\]\h\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\]\$(__git_ps1)> "
-#export PS1="\\[\[\e[32m\]\A\[\e[0m\]] \[\e[32m\]\u\[\e[0m\]@\[\e[32m\]\h\[\e[0m\] \[\e[1;34m\]\w\[\e[0m\]\e[0;33m\]\$(__git_ps1)\e[0m\]> "
-
-#export PS1="\[\033[38;5;2m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput sgr0)\]\[\033[38;5;11m\]\h\[$(tput sgr0)\]\[\033[38;5;15m\]\[$(tput sgr0)\]\[\033[38;5;6m\][\w]\[$(tput sgr0)\]\[\033[38;5;15m\]\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;208m\]\$(__git_ps1) \[$(tput sgr0)\]"
-#export PS1="[\w]\[$(tput sgr0)\]\[\033[38;5;15m\]\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;208m\]\$(__git_ps1) \[$(tput sgr0)\]"
-# Time & path
-# Path
-# export PS1="\[\033[38;5;147m\]\[\$(__kube_context)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;6m\][\w]\[$(tput sgr0)\]\[\033[38;5;15m\]\[\033[38;5;208m\]\$(__git_ps1) \[$(tput sgr0)\]"
-# export PS1="\[\e[0;32m\]\$(__kube_context)\[\e[0m\] \[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;6m\][\w]\[$(tput sgr0)\]\[\033[38;5;15m\]\[\033[38;5;208m\]\$(__git_ps1) \[$(tput sgr0)\]"
 export PS1="\[\033[48;5;25m\]\$(__kube_context)\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;6m\] [\w]\[$(tput sgr0)\]\[\033[38;5;15m\]\[\033[38;5;208m\]\$(__git_ps1) \[$(tput sgr0)\]"
-
-
-
-## Colorize the ls output ##
-##alias ls='ls --color=auto'
 
 ## Use a long listing format ##
 alias ll='ls -la'
@@ -175,12 +161,9 @@ export PATH="$PATH:/usr/bin/bin"  # node
 export PATH="$PATH:/Users/aitem/bin"  # custom bin
 export PATH="$PATH:/home/aitem/Android/Sdk/tools"
 export PATH="$PATH:/usr/lib/postgresql/9.5/bin/"  # node
-export PATH="$PATH:/Users/aitem/Library/Android/sdk/platform-tools"
 export PATH=/usr/local/openresty/bin:$PATH
 export PATH=/usr/local/openresty/bin:/usr/local/openresty/nginx/sbin:$PATH
 
-export ANDROID_HOME=/home/aitem/Android/Sdk
-# export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/.go
 export NVM_DIR="$HOME/.nvm"
@@ -188,7 +171,6 @@ export SHELL=/bin/bash emacs
 export PATH=$PATH:$GOROOT/bin
 
 export PGPASSWORD=postgres
-export CUDA_HOME=/usr/local/cuda
 export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:$CUDA_HOME/lib"
 export PATH="$CUDA_HOME/bin:$PATH"
 
