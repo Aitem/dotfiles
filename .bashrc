@@ -1,7 +1,3 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -22,7 +18,7 @@ shopt -s histappend
 source ~/.git-prompt.sh
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
+HISTSIZE=2000
 HISTFILESIZE=2000
 
 # check the window size after each command and, if necessary,
@@ -91,7 +87,6 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias bfg='java -jar /usr/local/bin/bfg-1.13.0.jar '
 alias ll='ls -alh'
 alias la='ls -A'
 alias l='ls -CF'
@@ -107,7 +102,13 @@ alias gcm='git commit -m '
 alias gs='git status'
 alias gchm='git checkout master'
 alias gchp='git checkout production'
-
+# KUBE
+alias kgp='kubectl get pods'
+alias kgn='kubectl get nodes'
+alias kgs='kubectl get secret'
+alias kgn='kubectl get ns'
+alias kgsv='kubectl get svc'
+alias keti='kubectl exec -it'
 
 
 # Alias definitions.
@@ -138,12 +139,9 @@ __kube_context ()
 }
 export PS1="\[\033[48;5;25m\]\$(__kube_context)\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;6m\] [\w]\[$(tput sgr0)\]\[\033[38;5;15m\]\[\033[38;5;208m\]\$(__git_ps1) \[$(tput sgr0)\]"
 
-## Use a long listing format ##
-alias ll='ls -la'
 
 ## Show hidden files ##
 alias l.='ls -d .* --color=auto'
-alias vim='nvim'
 
 # added by travis gem
 [ -f /home/aitem/.travis/travis.sh ] && source /home/aitem/.travis/travis.sh
@@ -176,8 +174,6 @@ export PATH="$CUDA_HOME/bin:$PATH"
 
 complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" make
 
-# added by travis gem
-[ -f /Users/aitem/.travis/travis.sh ] && source /Users/aitem/.travis/travis.sh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
